@@ -152,7 +152,20 @@
         .contact-item.whatsapp:hover span {
             color: white;
         }
+        
+        .title-with-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
 
+        .title-logo {
+            height: 35px;
+            width: auto;
+        }
+        
         /* Floating Buttons */
         .whatsapp-btn {
             background: #25D366;
@@ -313,15 +326,19 @@
             box-shadow: 0 20px 60px rgba(44, 62, 80, 0.3);
         }
         
+        .about-main .title-with-logo {
+            justify-content: start;
+        }
+        
         .about-main .about-intro h3 {
             font-size: 2.2em;
-            margin-bottom: 15px;
+            margin-bottom: 0; /* Adjusted for flex alignment */
             background: linear-gradient(135deg, #ffffff, #f8f9fa);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .about-main .about-intro .subtitle { font-size: 1.3em; opacity: 0.9; font-weight: 300; }
+        .about-main .about-intro .subtitle { font-size: 1.3em; opacity: 0.9; font-weight: 300; margin-top: 15px; }
         .about-main .about-text { font-size: 1.1em; line-height: 1.9; }
         [dir="ltr"] .about-main .about-text, [dir="ltr"] .stat-description, [dir="ltr"] .exp-description { text-align: justify; }
         [dir="rtl"] .about-main .about-text, [dir="rtl"] .stat-description, [dir="rtl"] .exp-description { text-align: justify; }
@@ -343,7 +360,7 @@
         .stat-title { font-size: 1.3em; font-weight: 700; color: #2c3e50; margin-bottom: 10px; }
         .stat-description { color: #6c757d; font-size: 0.95em; line-height: 1.6; }
 
-        /* Experience & Education Section */
+        /* Experience Section */
         .experience-item {
             background: white; border-radius: 15px; padding: 30px; margin-bottom: 30px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.08); transition: all 0.3s ease;
@@ -356,19 +373,25 @@
         .exp-company { color: #3498db; font-weight: 600; }
         .exp-date { background: linear-gradient(135deg, #3498db, #9b59b6); }
         .exp-date { color: white; padding: 8px 15px; border-radius: 20px; font-size: 0.9em; font-weight: 600; white-space: nowrap; }
-        .exp-description { color: #555; line-height: 1.7; }
+        
+        .company-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-top: 8px;
+        }
+
+        .company-logo {
+            height: 40px;
+            width: auto;
+            border-radius: 6px;
+        }
 
         .achievements { margin-top: 20px; }
         .achievement-item { display: flex; align-items: flex-start; margin-bottom: 12px; padding: 12px; background: #f8f9fa; border-radius: 8px; }
         .achievement-item i { color: #27ae60; margin-top: 4px; }
         [dir="ltr"] .achievement-item i { margin-right: 12px; }
         [dir="rtl"] .achievement-item i { margin-left: 12px; }
-
-        .emac-roles { margin-top: 20px; padding: 20px; background: #f8f9fa; border-radius: 8px; }
-        .emac-roles h4 { margin-bottom: 15px; color: #2c3e50; }
-        .emac-role { display: flex; justify-content: space-between; padding-bottom: 10px; margin-bottom: 10px; border-bottom: 1px solid #e9ecef; flex-wrap: wrap; gap: 10px; }
-        .emac-role:last-child { border-bottom: none; }
-        .emac-role-title { font-weight: 600; }
 
         /* Skills Section */
         .skills-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
@@ -383,7 +406,7 @@
         [dir="rtl"] .skill-item:hover { transform: translateX(-5px); }
         .skill-item span:first-child { font-weight: 500; }
 
-        /* Tech Skills & Projects Section */
+        /* Projects Section */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -491,7 +514,10 @@
                 <img src="https://i.ibb.co/cWsWydF/2.jpg" alt="Ahmed Abuelkhier" class="profile-img">
                 <div class="header-text">
                     <h1><span data-key="name">أحمد أبو الخير</span></h1>
-                    <h2><span data-key="jobTitle">المدير المالي والإداري</span></h2>
+                    <div class="title-with-logo">
+                        <img src="https://i.ibb.co/rGhsKLy6/logo-emak.png" alt="شعار ايماك" class="title-logo">
+                        <h2><span data-key="jobTitle">المدير المالي والإداري</span></h2>
+                    </div>
                 </div>
             </div>
             <div class="contact-info">
@@ -530,7 +556,10 @@
                 <h2 data-key="aboutMe">نبذة تعريفية</h2>
                 <div class="about-main">
                     <div class="about-intro">
-                        <h3><span data-key="aboutHeader">المدير المالي والإداري</span></h3>
+                        <div class="title-with-logo">
+                             <img src="https://i.ibb.co/rGhsKLy6/logo-emak.png" alt="شعار ايماك" class="title-logo">
+                            <h3><span data-key="aboutHeader">المدير المالي والإداري</span></h3>
+                        </div>
                         <p class="subtitle"><span data-key="aboutSubHeader">قائد مالي وإداري متمرس يتمتع بخبرة قيادة التحول الاستراتيجي والنمو المستدام في قطاع المقاولات.</span></p>
                     </div>
                     <div class="about-text">
@@ -569,10 +598,13 @@
                 <div class="experience-item">
                     <div class="exp-header">
                         <div>
-                            <div class="exp-title"><span data-key="exp1Role3">المدير المالي والإداري</span></div>
-                            <div class="exp-company"><span data-key="exp1Company">شركة إيماك للمقاولات (مجموعة الخرافي)</span></div>
+                            <div class="exp-title" data-key="exp1Role3">المدير المالي والإداري</div>
+                            <div class="company-container">
+                                <img src="https://i.ibb.co/rGhsKLy6/logo-emak.png" alt="شعار شركة ايماك" class="company-logo">
+                                <div class="exp-company" data-key="exp1Company">شركة إيماك للمقاولات (مجموعة الخرافي)</div>
+                            </div>
                         </div>
-                        <div class="exp-date"><span data-key="exp1Role3Date">2021 – حتى الآن</span></div>
+                        <div class="exp-date" data-key="exp1Role3Date">2021 – حتى الآن</div>
                     </div>
                     <div class="achievements">
                         <div class="achievement-item"><i class="fas fa-check"></i><span data-key="exp1Ach1">قيادة التخطيط المالي الاستراتيجي وإدارة الميزانيات السنوية بكفاءة عالية.</span></div>
